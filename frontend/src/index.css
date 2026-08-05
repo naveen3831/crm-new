@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-poppins: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-inter: var(--font-poppins);
+  --font-manrope: var(--font-poppins);
+
+  /* New CRM palette (Palette #16: Deep Royal Navy & Coral Red) */
+  --brand-black:   #061233;
+  --brand-dark:    #0B2369;
+  --brand-mid:     #1E3A8A;
+  --brand-muted:   #64748B;
+  --brand-light:   #F05454;
+
+  --brand-blue-700: #0B2369;
+  --brand-blue-600: #1743BF;
+  --brand-blue-500: #3B6DE4;
+  --brand-blue-300: #9DB7F4;
+  --brand-blue-100: #E6ECFC;
+
+  --red-500:   #F05454;
+  --amber-500: #FF9F0A;
+  --green-500: #10B981;
+
+  --premium-bg: #F3F6FC;
+  --premium-surface: #FFFFFF;
+  --premium-navy: #0B2369;
+  --premium-teal: #F05454;
+  --premium-teal-dark: #E03C3C;
+  --premium-aqua: #FDE8E8;
+}
+
+body {
+  font-family: var(--font-poppins);
+  background-color: #F4F7FC;
+  color: #0F172A;
+  overflow-x: hidden;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+:where(p, span, label, small, li, td, th, button, a, input, select, textarea, h1, h2, h3, h4, h5, h6) {
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+:where(aside, nav, main, section, article, form, table) {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+:where(aside, nav) :where(button, a, span, p, div) {
+  font-weight: 700;
+}
+
+/* Removed override to allow default Tailwind classes to apply */
+
+:where(main, section, article, table, form) :where(.text-gray-400, .text-slate-400) {
+  color: #64748b !important;
+}
+
+:where(main, section, article, table, form) :where(.text-gray-500, .text-slate-500) {
+  color: #475569 !important;
+}
+
+:where(main, section, article, table, form) :where(.text-gray-600, .text-slate-600) {
+  color: #334155 !important;
+}
+
+@keyframes crmFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes crmFadeOnly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes crmSoftGlow {
+  0%, 100% {
+    box-shadow: 0 12px 30px rgba(7, 30, 52, 0.08);
+  }
+  50% {
+    box-shadow: 0 18px 44px rgba(14, 159, 138, 0.16);
+  }
+}
+
+@keyframes crmGradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes crmShimmer {
+  0% { transform: translateX(-130%) skewX(-18deg); }
+  100% { transform: translateX(230%) skewX(-18deg); }
+}
+
+@keyframes crmScaleIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes crmModalIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes crmRowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes crmFloatSoft {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+
+@keyframes crmBreathingBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 159, 138, 0.14), 0 10px 30px rgba(5, 42, 79, 0.06); }
+  50% { box-shadow: 0 0 0 4px rgba(14, 159, 138, 0.05), 0 18px 44px rgba(5, 42, 79, 0.10); }
+}
+
+@keyframes crmLivePulse {
+  0%, 100% { opacity: 0.72; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes crmSlideInRight {
+  from { opacity: 0; transform: translate3d(16px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.animate-page-enter {
+  animation: crmFadeUp 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+main.animate-page-enter {
+  animation: crmFadeOnly 0.32s ease-out both;
+}
+
+.interactive-lift {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
+  will-change: transform;
+}
+
+.interactive-lift:hover {
+  transform: translateY(-2px);
+}
+
+.motion-enhanced-surface {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-enhanced-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(14, 159, 138, 0.08) 42%, transparent 58%);
+  opacity: 0;
+  transform: translateX(-35%);
+  transition: opacity 220ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.motion-enhanced-surface:hover::before {
+  opacity: 1;
+  transform: translateX(35%);
+}
+
+.app-motion-root,
+[class*="Workspace"],
+[class*="Dashboard"] {
+  animation: crmFadeUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+main {
+  animation: crmFadeOnly 0.32s ease-out both;
+}
+
+:where(section, article, form, aside, header, footer) {
+  animation: crmFadeUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:where(.glass-card, .premium-surface, [class*="rounded-2xl"], [class*="rounded-3xl"], [class*="rounded-[28px]"]) {
+  animation: crmScaleIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    opacity 220ms ease;
+}
+
+:where(.glass-card, .premium-surface, [class*="rounded-2xl"], [class*="rounded-3xl"], [class*="rounded-[28px]"]):hover {
+  transform: translateY(-3px) scale(1.002);
+}
+
+:where(.glass-card, .premium-surface):focus-within {
+  animation: crmBreathingBorder 2.4s ease-in-out infinite;
+}
+
+:where(button, a, [role="button"]) {
+  transform: translateZ(0);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+:where(button, a, [role="button"]):hover {
+  transform: translateY(-1px);
+}
+
+:where(button, a, [role="button"]):active {
+  transform: translateY(0) scale(0.985);
+}
+
+:where(input, select, textarea) {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+:where(input, select, textarea):focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(14, 159, 138, 0.12);
+}
+
+:where(table tbody tr) {
+  animation: crmRowIn 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+:where(table tbody tr):hover {
+  transform: translateX(2px);
+}
+
+:where(nav button, aside button, nav a, aside a) {
+  position: relative;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+:where(nav button, aside button, nav a, aside a)::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(14, 159, 138, 0.62), transparent);
+  opacity: 0;
+  transform: scaleX(0.45);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+:where(nav button, aside button, nav a, aside a):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+:where([class*="fixed"][class*="inset-0"]) {
+  animation: crmFadeUp 0.18s ease-out both;
+}
+
+:where([class*="fixed"][class*="inset-0"] > div, [role="dialog"]) {
+  animation: crmModalIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:where(main, section, nav, aside, table tbody) > :nth-child(1) { animation-delay: 0ms; }
+:where(main, section, nav, aside, table tbody) > :nth-child(2) { animation-delay: 35ms; }
+:where(main, section, nav, aside, table tbody) > :nth-child(3) { animation-delay: 70ms; }
+:where(main, section, nav, aside, table tbody) > :nth-child(4) { animation-delay: 105ms; }
+:where(main, section, nav, aside, table tbody) > :nth-child(5) { animation-delay: 140ms; }
+:where(main, section, nav, aside, table tbody) > :nth-child(n+6) { animation-delay: 165ms; }
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #0B2369 0%, #1743BF 50%, #F05454 100%);
+  background-size: 180% 180%;
+  animation: crmGradientFlow 8s ease infinite;
+  box-shadow: 0 12px 26px rgba(11, 35, 105, 0.22);
+}
+
+.premium-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: translateX(-130%) skewX(-18deg);
+  animation: crmShimmer 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.button-gradient,
+.premium-button {
+  isolation: isolate;
+}
+
+.button-gradient:hover,
+.premium-button:hover {
+  animation-duration: 4.2s;
+  box-shadow: 0 16px 34px rgba(240, 84, 84, 0.28);
+}
+
+:where(.bg-rose-50, .bg-emerald-50, .bg-blue-50, .bg-amber-50, .bg-purple-50) {
+  background-size: 180% 180%;
+}
+
+.premium-text-gradient {
+  background: linear-gradient(120deg, #0B2369 0%, #1743BF 48%, #F05454 100%);
+  background-size: 180% 180%;
+  animation: crmGradientFlow 9s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-surface {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(243,246,252,0.90));
+  border-color: rgba(11, 35, 105, 0.12);
+  box-shadow: 0 16px 42px rgba(7, 30, 52, 0.08);
+}
+
+.workspace-aurora {
+  background:
+    radial-gradient(circle at 12% 6%, rgba(255, 83, 73, 0.10), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(240, 84, 84, 0.07), transparent 24%),
+    linear-gradient(180deg, #F7FBFA 0%, #F1F8F6 100%);
+}
+
+.sidebar-premium {
+  background: linear-gradient(180deg, #ffffff, #f8fcfb);
+  border-right-color: rgba(255, 83, 73, 0.14);
+}
+
+.app-motion-root {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(255, 83, 73, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(7, 30, 52, 0.025) 1px, transparent 1px),
+    #F7FBFA;
+  background-size: 44px 44px, 44px 44px, auto;
+  background-position: 0 0;
+  animation: crmFadeUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) both, crmGradientFlow 18s ease infinite;
+}
+
+:where([class*="Live"], [class*="live"], [class*="Active"], [class*="active"], .status-live)::before {
+  animation: crmLivePulse 1.8s ease-in-out infinite;
+}
+
+:where(.toast, [class*="Toast"], [class*="toast"]) {
+  animation: crmSlideInRight 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:where([draggable="true"]) {
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms ease, opacity 180ms ease;
+}
+
+:where([draggable="true"]):active {
+  transform: rotate(0.35deg) scale(1.012);
+  box-shadow: 0 22px 48px rgba(7, 30, 52, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ── Glassmorphism ─────────────────────────────── */
+.glass-container {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(15, 126, 234, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(15, 126, 234, 0.12);
+  box-shadow: 0 10px 30px rgba(5, 42, 79, 0.06), 0 2px 8px rgba(5, 42, 79, 0.03);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 126, 234, 0.22);
+  box-shadow: 0 20px 50px rgba(5, 42, 79, 0.10);
+  transform: translateY(-2px);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button,
+a {
+  transition-duration: 200ms;
+}
+
+.glass-input {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 126, 234, 0.20);
+  color: var(--brand-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input::placeholder {
+  color: #94a3b8;
+}
+
+.glass-input:focus {
+  border-color: #FF5349;
+  box-shadow: 0 0 0 3px rgba(255, 83, 73, 0.15);
+  outline: none;
+}
+
+/* ── Gradients ─────────────────────────────────── */
+.hero-gradient {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 83, 73, 0.10), transparent 34%),
+    radial-gradient(circle at 86% 10%, rgba(6, 19, 45, 0.05), transparent 28%),
+    linear-gradient(160deg, #ffffff 0%, #F8FAFC 60%, #F1F5F9 100%);
+}
+
+.button-gradient {
+  /* Use the primary single brand orange color */
+  background: #FF5349; /* brand primary */
+}
+
+/* ── Text Gradients ────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(130deg, #06132D 0%, #FF5349 70%, #F05454 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF5349 0%, #06132D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hide Vertical Scrollbar Globally ────────────────── */
+::-webkit-scrollbar {
+  width: 0px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar:vertical,
+::-webkit-scrollbar-track:vertical,
+::-webkit-scrollbar-thumb:vertical {
+  display: none !important;
+  width: 0px !important;
+  background: transparent !important;
+}
+
+/* ── Sleek Modern Horizontal Scrollbar ───────────────── */
+::-webkit-scrollbar:horizontal {
+  display: block !important;
+  height: 8px !important;
+  background: #F1F5F9 !important;
+  border-radius: 999px !important;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  display: block !important;
+  background: #F1F5F9 !important;
+  border-radius: 999px !important;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  display: block !important;
+  background: #CBD5E1 !important;
+  border-radius: 999px !important;
+  border: 1.5px solid #F1F5F9 !important;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #94A3B8 !important;
+}
+
+::-webkit-scrollbar-corner {
+  display: none !important;
+  background: transparent !important;
+}
+
+html, body, main, aside, nav {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+aside,
+aside *,
+nav,
+nav *,
+.no-scrollbar,
+.no-scrollbar * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+aside::-webkit-scrollbar,
+aside *::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+nav *::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.overflow-x-auto,
+[class*="overflow-x-auto"],
+.scrollbar-thin {
+  scrollbar-width: thin !important;
+  scrollbar-color: #CBD5E1 #F1F5F9 !important;
+}
+
+/* ── Typography scale ──────────────────────────── */
+.font-heading {
+  font-family: var(--font-manrope);
+}
+
+.display-xl {
+  font-family: var(--font-manrope);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  font-weight: 900;
+  color: var(--brand-black);
+  letter-spacing: -0.02em;
+}
+
+.display-lg {
+  font-family: var(--font-manrope);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--brand-black);
+  letter-spacing: -0.015em;
+}
+
+.display-md {
+  font-family: var(--font-manrope);
+  font-size: clamp(1.75rem, 3.5vw, 2.875rem);
+  line-height: 1.12;
+  font-weight: 750;
+  color: var(--brand-black);
+  letter-spacing: -0.01em;
+}
+
+/* ── Utility overrides for body copy ───────────── */
+.text-gray-400 { color: #64748b !important; }
+.text-gray-500 { color: #475569 !important; }
+.text-gray-600 { color: #334155 !important; }
+.text-gray-700 { color: #1f2937 !important; }
+.text-slate-400 { color: #64748b !important; }
+.text-slate-500 { color: #475569 !important; }
+.text-slate-600 { color: #334155 !important; }
+.text-slate-700 { color: #1f2937 !important; }
+

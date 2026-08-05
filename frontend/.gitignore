@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Next.js & Vite build outputs
+.next/
+.next-dev/
+dist/
+out/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Editor & OS
+.vscode/
+.DS_Store
+Thumbs.db

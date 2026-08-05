@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Disk caches & local data files
+bulk_cache.json
+bulk_cache_pretty.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Editor & OS
+.vscode/
+.DS_Store
+Thumbs.db
