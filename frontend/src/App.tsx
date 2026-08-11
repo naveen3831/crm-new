@@ -2,8 +2,8 @@ import * as React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Original full-featured Admin & Customer Dashboard components
-import AdminDashboard from "../app/admin/dashboard/page";
-import CustomerDashboard from "../app/customer/dashboard/page";
+import AdminDashboard from "../app/admin/dashboard/page.jsx";
+import CustomerDashboard from "../app/customer/dashboard/page.jsx";
 
 // Public Pages & Auth
 import LandingPage from "./pages/public/LandingPage";
