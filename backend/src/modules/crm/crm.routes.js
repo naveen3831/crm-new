@@ -24,7 +24,7 @@ router.get("/bulk", crmController.getBulkRecords);
 // Dynamic CRM collection endpoints mapping
 router.route("/:type")
   .get(crmController.getRecords)
-  .post(crmController.createRecord);
+  .post(crmController.createCrmRecord);
 
 router.route("/:type/:id")
   .get(crmController.getSingleRecord)

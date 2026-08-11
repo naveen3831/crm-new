@@ -75,6 +75,16 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/enquiries", enquiryRoutes);
 app.use("/api/v1/crm", crmRoutes);
 
+// Support lightweight notification probes or browser extensions that call /api/notifications
+app.get("/api/notifications", (req, res) => {
+  return res.status(200).json({
+    success: true,
+    data: [],
+    limit: req.query.limit || null,
+    message: "No notifications available."
+  });
+});
+
 // Catch-all route handler for unknown resource paths
 app.use((req, res, next) => {
   const error = new Error(`Resource Not Found - ${req.originalUrl}`);

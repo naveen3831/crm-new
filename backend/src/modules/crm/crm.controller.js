@@ -681,6 +681,12 @@ exports.getBulkRecords = async (req, res, next) => {
   }
 };
 
+exports.createCrmRecord = async (req, res, next) => {
+  try {
+    const { type } = req.params;
+    const payload = req.body || {};
+    const normType = normalizeType(type);
+
     if (normType === "user" || normType === "users") {
       const email = (payload.email || "").toLowerCase().trim();
       const existingUser = await User.findOne({ email }).lean();
