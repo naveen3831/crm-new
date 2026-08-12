@@ -360,9 +360,6 @@ export default function ClientsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold text-white font-heading flex items-center gap-2">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-extrabold text-white font-heading flex items-center gap-2">
             <Users className="text-[#FF5349]" /> Client Management
           </h1>
           <p className="text-xs text-slate-400 mt-1">Manage enterprise accounts, contacts, temporary prospects & permanent client profiles</p>

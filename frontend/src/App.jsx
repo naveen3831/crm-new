@@ -1,4 +1,4 @@
-import React from "react";
+const _jsxFileName = "C:\\Users\\Lenovo\\OneDrive\\Desktop\\CRM\\frontend\\src\\App.tsx";import * as React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Original full-featured Admin & Customer Dashboard components
@@ -18,35 +18,36 @@ import ToastHost from "../components/ui/ToastHost";
 
 export default function App() {
   return (
-    <div className="app-motion-root">
-      <Routes>
-        {/* Public Pages */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+    React.createElement('div', { className: "app-motion-root", __self: this, __source: {fileName: _jsxFileName, lineNumber: 21}}
+      , React.createElement(Routes, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 22}}
+        /* Public Pages */
+        , React.createElement(Route, { path: "/", element: React.createElement(LandingPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 24}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 24}} )
+        , React.createElement(Route, { path: "/services", element: React.createElement(ServicesPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 25}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 25}} )
+        , React.createElement(Route, { path: "/features", element: React.createElement(FeaturesPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 26}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 26}} )
+        , React.createElement(Route, { path: "/about", element: React.createElement(AboutPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 27}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 27}} )
+        , React.createElement(Route, { path: "/contact", element: React.createElement(ContactPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 28}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 28}} )
 
-        {/* Auth Pages */}
-        <Route path="/auth/login" element={<LoginPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/auth/register" element={<RegisterPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/auth/forgot-password" element={<ForgotPasswordPage />} />
+        /* Auth Pages */
+        , React.createElement(Route, { path: "/auth/login", element: React.createElement(LoginPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 31}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 31}} )
+        , React.createElement(Route, { path: "/login", element: React.createElement(LoginPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 32}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 32}} )
+        , React.createElement(Route, { path: "/auth/register", element: React.createElement(RegisterPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 33}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 33}} )
+        , React.createElement(Route, { path: "/register", element: React.createElement(RegisterPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 34}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 34}} )
+        , React.createElement(Route, { path: "/auth/forgot-password", element: React.createElement(ForgotPasswordPage, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 35}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 35}} )
 
-        {/* Original Full-Featured Admin Dashboard */}
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/our-projects/:projectId/proposals" element={<AdminDashboard />} />
-        <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+        /* Original Full-Featured Admin Dashboard */
+        , React.createElement(Route, { path: "/admin/dashboard", element: React.createElement(AdminDashboard, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 38}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 38}} )
+        , React.createElement(Route, { path: "/admin/our-projects/:projectId/proposals", element: React.createElement(AdminDashboard, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 39}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 39}} )
+        , React.createElement(Route, { path: "/admin", element: React.createElement(Navigate, { to: "/admin/dashboard", replace: true, __self: this, __source: {fileName: _jsxFileName, lineNumber: 40}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 40}} )
 
-        {/* Original Full-Featured Customer Dashboard */}
-        <Route path="/customer/dashboard" element={<CustomerDashboard />} />
-        <Route path="/customer" element={<Navigate to="/customer/dashboard" replace />} />
+        /* Original Full-Featured Customer Dashboard */
+        , React.createElement(Route, { path: "/customer/dashboard", element: React.createElement(CustomerDashboard, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 43}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 43}} )
+        , React.createElement(Route, { path: "/customer", element: React.createElement(Navigate, { to: "/customer/dashboard", replace: true, __self: this, __source: {fileName: _jsxFileName, lineNumber: 44}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 44}} )
 
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-      <ToastHost />
-    </div>
+        /* Fallback */
+        , React.createElement(Route, { path: "*", element: React.createElement(Navigate, { to: "/", replace: true, __self: this, __source: {fileName: _jsxFileName, lineNumber: 47}} ), __self: this, __source: {fileName: _jsxFileName, lineNumber: 47}} )
+      )
+      , React.createElement(ToastHost, {__self: this, __source: {fileName: _jsxFileName, lineNumber: 49}} )
+    )
   );
 }
+

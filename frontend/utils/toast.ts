@@ -1,8 +1,0 @@
-export type ToastType = "success" | "error" | "info";
-
-export const showToast = (message: string, type: ToastType = "success") => {
-  if (typeof window !== "undefined") {
-    window.dispatchEvent(new CustomEvent("crm-toast", { detail: { message, type } }));
-  }
-};
-

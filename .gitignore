@@ -33,6 +33,19 @@ frontend/.env.*
 !frontend/.env.example
 *.env
 
+# AWS / cloud credentials
+.env.local
+.env.development.local
+.env.production.local
+aws.env
+*.aws
+**/aws-credentials*
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_SESSION_TOKEN
+AWS_DEFAULT_REGION
+AWS_REGION
+
 # Logs
 logs
 *.log
